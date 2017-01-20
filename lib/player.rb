@@ -1,6 +1,4 @@
-
 class Player
-require 'game'
 
 DEFAULT_HIT_POINT = 45
   attr_reader :name, :hit_point

@@ -11,4 +11,8 @@ attr_reader :player1, :player2
     player.reduce_point
   end
 
+  def lose?
+  	true if @player1.hit_point <=0 || @player2.hit_point <=0
+  end
+
 end

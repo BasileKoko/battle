@@ -28,6 +28,7 @@ class Battle < Sinatra::Base
     @player_1 = @game.player1
     @player_2 = @game.player2
     @game.attack_player(@player_2)
+     redirect '/over' if @game.lose? == true
     erb :attack
 
   end
@@ -44,9 +45,13 @@ end
     @player_1 = @game.player1
     @player_2 = @game.player2
     @game.attack_player(@player_1)
+    redirect '/over' if @game.lose? == true
     erb :attack_for_player_two
   end
 
+  get '/over' do
+    erb :over
+  end
 
   # start the server if ruby file executed directly
   run! if app_file == $0

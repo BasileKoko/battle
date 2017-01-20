@@ -11,4 +11,13 @@ describe Game do
       game.attack_player(player_2)
     end
   end
+
+     describe '#lose' do
+    	it 'the game will lose' do
+     allow(player_2).to receive(:hit_point).and_return(0)
+     allow(player_1).to receive(:hit_point).and_return(10)
+     expect(game.lose?).to eq true
+    end
+  end
+
 end

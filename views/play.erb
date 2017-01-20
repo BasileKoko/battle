@@ -1,6 +1,8 @@
 
 <div align="center">
-  <h1 align="center"> <%=@player_1_name%> vs. <%=@player_2_name%> </h1>
-  <p><%=@player_2_name%>: 45HP</p>
+  <h1 align="center"> <%=@game.player1.name%> vs. <%=@game.player2.name%> </h1>
+  <p><%=@game.player1.name%>: <%=@game.player1.hit_point%> HP</p>
+  <p><%=@game.player2.name%>: <%=@game.player2.hit_point%> HP</p>
+
   <a href="/attack">Attack</a>
 </div>

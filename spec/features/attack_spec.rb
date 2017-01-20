@@ -1,8 +1,8 @@
 
 feature 'Win the game' do
-  scenario 'attack player 2', js: true do #I add this js: true to fix confirmation message
+  scenario 'attack player 2' do
     sign_in_and_play
-    click_button('Attack')
-    page.accept_alert
+    click_link('Attack')
+    expect(page).to have_content "Basile attacked Chris"
     end
 end
